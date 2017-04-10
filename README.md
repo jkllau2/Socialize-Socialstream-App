@@ -1,4 +1,4 @@
-# Conduit AngularJS Starter
+# Socialize Web App
 
 1. Clone repo
 2. `npm install`
