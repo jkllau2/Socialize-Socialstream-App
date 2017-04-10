@@ -1,0 +1,86 @@
+ <div class="home-page">
+
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-12">
+        
+        <h3>My Social Stream</h3>
+
+        <div class="article-preview">
+          <div class="article-meta">
+            <a href=""><img /></a>
+            <div class="info">
+              <a href="" class="author">JoeWest</a>
+              <span class="date">March 10th</span>
+            </div>
+          </div>
+
+          <div class="stream-container">
+            <div class="stream-card" ng-repeat="item in $ctrl.stream">
+
+              <div ng-show="item.channel === 'twitter'">
+                <div class="stream-card-name">
+                  <img ng-src="{{::item.user.image}}" />
+                  <span>@{{::item.user.screen_name}}</span>
+                </div>
+                <div class="stream-card-title">
+                  <a open-url ng-href="{{::item.link }}" ng-bind="::item.title"></a>
+                </div>
+                <div class="stream-card-misc">
+                  <i class="ion-refresh"></i>
+                  <span ng-bind="::item.retweets"></span>
+                  <i class="ion-heart"></i>
+                  <span ng-bind="::item.favorites"></span>
+                </div>
+                <div class="stream-card-tw">
+                  <i class="stream-ion ion-social-twitter-outline"></i>
+                  <span ng-bind="::item.user.screen_name"></span>&#32;Twitted&#32;
+                  <span ng-bind="::item.from_now"></span>
+                </div>
+              </div>
+
+              <div ng-show="item.channel === 'facebook'">
+                <img class="stream-card-img" ng-src="{{::item.image}}" />
+                <div class="stream-card-title">
+                  <a open-url ng-href="{{::item.link }}" ng-bind="::item.title"></a>
+                </div>
+                <div class="stream-card-fb">
+                  <i class="stream-ion ion-social-facebook-outline"></i>
+                  <span ng-bind="::item.user.screen_name"></span>&#32;Posted on &#32;
+                  <span ng-bind="::item.date | date: 'medium'"></span>
+                </div>
+              </div>
+
+              <div ng-show="item.channel === 'youtube'">
+                <img class="stream-card-img" ng-src="{{::item.thumbnails.high}}" />
+                <div class="stream-card-title">
+                  <a open-url ng-href="{{::item.link }}" ng-bind="::item.title"></a>
+                </div>
+                <div class="stream-card-yt">
+                  <i class="stream-ion ion-social-youtube"></i>
+                  <span ng-bind="::item.user.screen_name"></span>&#32;Uploaded on &#32;
+                  <span ng-bind="::item.date | date: 'medium'"></span>
+                </div>
+              </div>
+
+              <div ng-show="item.channel === 'rss'">
+              <div class="stream-card-title">
+                <a open-url ng-href="{{::item.link }}" ng-bind="::item.title"></a>
+              </div>  
+               <div class="stream-card-rss">
+                  <i class="stream-ion ion-social-rss"></i>
+                  <span ng-bind="::item.user.screen_name"></span>&#32;Posted on &#32;
+                  <span ng-bind="::item.date | date: 'medium'"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- End the row & container divs -->
+    </div>
+  </div>
+
+</div>
