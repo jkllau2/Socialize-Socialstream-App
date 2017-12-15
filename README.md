@@ -4,8 +4,8 @@
 2. `gulp`
 
 ## App Structure / Design
-* Angular 1.5 w/ ES6 using Babel (Modular folder structure)
-* Bootstrap (responsive layout), SCSS
-* NPM
+* Angular 1.5 (Modular folder structure)
+* ES6 with Babel
+* Bootstrap for grid / responsive layout
+* custom SCSS for layout and UI / UX
 * Browserify
-* Browsersync
